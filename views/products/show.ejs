@@ -16,7 +16,7 @@
                   <h5 class="card-title"><%=product.name%></h5>
                   <p class="card-text"><%=product.desc%></p>
                   <h5 class="card-title">&#x20B9 <%=product.price%></h5>
-                  <a href="#" class="btn btn-primary btn-small">Buy</a>
+                  <a href="../payment" class="btn btn-primary btn-small">Buy</a>
                   <form class="d-inline-block" action="/cart/<%=product._id%>/add" method="POST">
                     <button type="submit" class="btn btn-secondary btn-small">Add To Cart</button>
                   </form>

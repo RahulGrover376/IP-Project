@@ -43,4 +43,9 @@ router.delete('/cart/:id/remove',isLoggedIn,async(req,res)=>
     res.redirect('/user/cart');
 })
 
+router.get('/payment', isLoggedIn, async (req, res) => {
+    console.log('in payment ....')
+    res.render('public/checkout.ejs')
+});
+
 module.exports=router;
