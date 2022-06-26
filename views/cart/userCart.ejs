@@ -1,6 +1,6 @@
 <%- include("../partials/header") %> 
 <%- include("../partials/navbar") %> 
-
+<%let totalAmount=0%>
 <main class="container">
 
    <%- include("../partials/flash") %> 
@@ -31,20 +31,22 @@
                 
             <%}%>
         </div>
-        <div class="col-lg-4">
-            <%let totalAmount=0%>
+        <div class="col-lg-4">  
             <h1 class="display-6">Items</h1>
            <ul class="list-group">
                 <%for(let item of user.cart){%>
                     <% totalAmount+=item.price %>
                     <li class="list-group-item"> <span class="fw-bold"> <%=item.name%></span> : &#x20B9 <span><%= item.price %> </span>  </li>
                 <%}%>
-                <li class="list-group-item"> <span class="fw-bold"> Total Amount</span> : &#x20B9 <span><%= totalAmount %> </span>  </li>
+                <li class="list-group-item"> <span class="fw-bold"> Discount</span> : &#x20B9 <span id ="discount"><%= discount %> </span>  </li>
+                <li class="list-group-item"> <span class="fw-bold"> Total Amount</span> : &#x20B9 <span><%= totalAmount-discount %> </span>  </li>
             </ul>
             <div class="my-3">
+
             <form action="/payment">
-                    <button class="btn btn-success btn-small">Proceed To Pay</button>
+              <button class="btn btn-success btn-small">Proceed To Pay</button>
             </form>
+
             </div>
            
         </div>
